@@ -12,10 +12,6 @@ const Traffic = require('./models/Traffic');
 
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send('Server is running!');
-});
-
 // Kiểm tra biến môi trường
 if (!process.env.FRONTEND_URL) {
     console.error('FRONTEND_URL is not defined in .env');
@@ -50,6 +46,9 @@ app.get('/api/traffic-data', async (req, res) => {
 // Routes
 app.use("/api", router);
 
+app.get('/', (req, res) => {
+    res.send('Server is running!');
+});
 
 // Xử lý lỗi
 app.use((err, req, res, next) => {
