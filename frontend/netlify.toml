@@ -1,0 +1,8 @@
+[build]
+  publish = "build" # Thư mục chứa file build (đối với React là "build")
+  command = "npm run build" # Lệnh để build ứng dụng
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
