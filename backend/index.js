@@ -12,6 +12,10 @@ const Traffic = require('./models/Traffic');
 
 const app = express();
 
+app.get('/', (req, res) => {
+    res.send('Server is running!');
+});
+
 // Kiểm tra biến môi trường
 if (!process.env.FRONTEND_URL) {
     console.error('FRONTEND_URL is not defined in .env');
